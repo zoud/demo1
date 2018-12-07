@@ -3,6 +3,7 @@ package com.example.demo.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * @Author: zoud
@@ -31,5 +32,9 @@ public class Species {
 
     @Column(length = 30)
     private String speciesType;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "species_id", referencedColumnName = "id")
+    private List<Gene> geneList;
 
 }
