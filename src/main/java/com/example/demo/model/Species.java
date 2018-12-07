@@ -33,7 +33,7 @@ public class Species {
     @Column(length = 30)
     private String speciesType;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "species_id", referencedColumnName = "id")
     private List<Gene> geneList;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * @Author: zoud
@@ -40,4 +41,8 @@ public class Gene {
     @JsonIgnore
     @JoinColumn(name = "species_id")
     private Species species;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "gene_id", referencedColumnName = "id")
+    private List<Methylation> methylationList;
 }
