@@ -31,4 +31,12 @@ public class SpeciesController {
 
         return "species";
     }
+
+    @RequestMapping("save")
+    public String save(Species species){
+        speciesService.save(species);
+
+        //重定向到首页
+        return "redirect:/index";
+    }
 }

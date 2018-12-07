@@ -22,4 +22,10 @@ public class SpeciesService {
         //select * from species;
         return speciesDao.findAll();
     }
+
+    public Species save(Species species){
+
+        //insert into species;
+        return speciesDao.save(species);
+    }
 }
