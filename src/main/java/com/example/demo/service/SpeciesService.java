@@ -28,4 +28,9 @@ public class SpeciesService {
         //insert into species;
         return speciesDao.save(species);
     }
+
+    public Species findById(int id){
+        return speciesDao.findBySpeciesId(id);
+    }
+
 }

@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -36,6 +37,7 @@ public class Gene {
     private String description;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "species_id")
     private Species species;
 }
